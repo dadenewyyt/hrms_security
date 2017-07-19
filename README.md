@@ -1,3 +1,2 @@
-# hrms_security
-
-A project of HUMAN resource managem system with Spring 4 mvc , spring secuiryt and kendo ui , theymeleaf and gradle.
+# PPC-CAMPAIGN-PROCESS
+This an intial project setup file complied. This the PPC backend Spring MVC JAVA implemation setup. 

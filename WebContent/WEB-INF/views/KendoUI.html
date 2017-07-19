@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page - My Kendo UI Application</title>
+    <link th:href="@{/resources/kendoui/styles/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/resources/kendoui/styles/site.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/resources/kendoui/styles/kendo.default.min.css}" rel="stylesheet" href="../../styles/kendo.common.min.css">
+    <link th:href="@{/resources/kendoui/styles/kendo.common.min.css}" rel="stylesheet" href="../../styles/kendo.common.min.css">
+
+    <script th:src="@{/resources/kendoui/js/jquery.min.js}"></script>
+    <script th:src="@{/resources/kendoui/js/kendo.all.min.js}" ></script>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row k-header">
+        <h1>Dashen Bank | Human Resource Management System</h1>
+        <div id="example">
+            <div id="megaStore">
+                <ul id="menu">
+                    <li>
+                        Products
+                        <ul>
+                            <li>
+                                Furniture
+                                <ul>
+                                    <li>Tables & Chairs</li>
+                                    <li>Sofas</li>
+                                    <li>Occasional Furniture</li>
+                                    <li>Children's Furniture</li>
+                                    <li>Beds</li>
+                                </ul>
+
+
+                            </li>
+                            <li>
+                                Decor
+                                <ul>
+                                    <li>Bed Linen</li>
+                                    <li>Throws</li>
+                                    <li>Curtains & Blinds</li>
+                                    <li>Rugs</li>
+                                    <li>Carpets</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Storage
+                                <ul>
+                                    <li>Wall Shelving</li>
+                                    <li>Kids Storage</li>
+                                    <li>Baskets</li>
+                                    <li>Multimedia Storage</li>
+                                    <li>Floor Shelving</li>
+                                    <li>Toilet Roll Holders</li>
+                                    <li>Storage Jars</li>
+                                    <li>Drawers</li>
+                                    <li>Boxes</li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                Lights
+                                <ul>
+                                    <li>Ceiling</li>
+                                    <li>Table</li>
+                                    <li>Floor</li>
+                                    <li>Shades</li>
+                                    <li>Wall Lights</li>
+                                    <li>Spotlights</li>
+                                    <li>Push Light</li>
+                                    <li>String Lights</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Stores
+                        <ul>
+                            <li>
+                                <div id="template" style="padding: 10px;">
+                                    <h2>Around the Globe</h2>
+                                    <ol>
+                                        <li>United States</li>
+                                        <li>Europe</li>
+                                        <li>Canada</li>
+                                        <li>Australia</li>
+                                    </ol>
+                                    <img src="../content/web/menu/map.png" alt="Stores Around the Globe" />
+                                    <button class="k-button">See full list</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Blog
+                    </li>
+                    <li>
+                        Company
+                    </li>
+                    <li>
+                        Events
+                    </li>
+                    <li disabled="disabled">
+                        News
+                    </li>
+                </ul>
+            </div>
+            <style>
+                #megaStore {
+                    max-width: 600px;
+                    margin: 30px auto;
+                    padding-top: 120px;
+                    background: url('../content/web/menu/header.jpg') no-repeat center 0;
+                }
+                #menu h2 {
+                    font-size: 1em;
+                    text-transform: uppercase;
+                    padding: 5px 10px;
+                }
+                #template img {
+                    margin: 5px 20px 0 0;
+                    float: left;
+                }
+                #template {
+                    width: 380px;
+                }
+                #template ol {
+                    float: left;
+                    margin: 0 0 0 30px;
+                    padding: 10px 10px 0 10px;
+                }
+                #template:after {
+                    content: ".";
+                    display: block;
+                    height: 0;
+                    clear: both;
+                    visibility: hidden;
+                }
+                #template .k-button {
+                    float: left;
+                    clear: left;
+                    margin: 5px 0 5px 12px;
+                }
+            </style>
+
+        </div>
+        <div id="responsive-panel">
+            <ul id="menu">
+                <li>Employee Profile<ul>
+                    <li>
+                        Furniture
+                        <ul>
+                            <li>Tables & Chairs</li>
+                            <li>Sofas</li>
+                            <li>Occasional Furniture</li>
+                            <li>Children's Furniture</li>
+                            <li>Beds</li>
+                        </ul>
+
+
+                    </li>
+                    <li>
+                        Decor
+                        <ul>
+                            <li>Bed Linen</li>
+                            <li>Throws</li>
+                            <li>Curtains & Blinds</li>
+                            <li>Rugs</li>
+                            <li>Carpets</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Storage
+                        <ul>
+                            <li>Wall Shelving</li>
+                            <li>Kids Storage</li>
+                            <li>Baskets</li>
+                            <li>Multimedia Storage</li>
+                            <li>Floor Shelving</li>
+                            <li>Toilet Roll Holders</li>
+                            <li>Storage Jars</li>
+                            <li>Drawers</li>
+                            <li>Boxes</li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        Lights
+                        <ul>
+                            <li>Ceiling</li>
+                            <li>Table</li>
+                            <li>Floor</li>
+                            <li>Shades</li>
+                            <li>Wall Lights</li>
+                            <li>Spotlights</li>
+                            <li>Push Light</li>
+                            <li>String Lights</li>
+                        </ul>
+                    </li>
+                </ul>
+                </li>
+                <li>Leave</li>
+                <li>Salary Management</li>
+                <li>Transfer</li>
+                <li>Vacancy Management</li>
+                <li>Vacancy Management</li>
+                <li class="k-state-disabled">Admin</li>
+            </ul>
+        </div>
+        <button id="configure" class="k-rpanel-toggle k-button k-primary btn-toggle">
+            <span class="k-icon k-i-hbars"></span>
+        </button>
+    </div>
+</div>
+
+<div class="container-fluid placeholders">
+    <div class="row">
+        <div class="col-xs-4 col-md-2 placeholder">
+            <img class="img-responsive " alt="200x200" th:src="@{/resources/kendoui/images/200.png}">
+        </div>
+        <div class="col-xs-10 col-md-3">
+            <h2>Lorem ipsum dolor sit amet...</h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                galley of type and scrambled it to make a type specimen book.
+            </p>
+
+            <p>
+                <button class="textButton k-primary" id="PrimaryButton">Primary Button</button>
+            </p>
+        </div>
+
+        <div class="col-xs-10 col-md-3">
+            <h2>&nbsp;</h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                galley of type and scrambled it to make a type specimen book.
+            </p>
+            <p>
+                <button class="textButton" id="TextButton">Button</button>
+            </p>
+
+        </div>
+        <div class="col-xs-10 col-md-3">
+            <h2>&nbsp;</h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                galley of type and scrambled it to make a type specimen book.
+            </p>
+
+            <p>
+                <button class="textButton" id="Button">Button</button>
+            </p>
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-18 col-md-12">
+            <div id="grid" style="height:550px;"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-18 col-md-12">
+            <div id="grid"></div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container-fluid">
+        <p class="text-muted">Copyright © 2002-2015 Telerik. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    function sampleData() {
+        var data = [];
+
+        for (var i = 0; i < 50; i++) {
+            var today = new Date();
+            today.setDate(today.getDate() + i);
+
+            data.push({
+                OrderID: i,
+                Freight: i * 10,
+                OrderDate: today,
+                ShipName: "ShipName " + i,
+                ShipCity: "ShipCity " + i
+            });
+        }
+
+        return data;
+    }
+
+    $(function(){
+        $("#responsive-panel").kendoResponsivePanel({
+            breakpoint: 768,
+            autoClose: false,
+            orientation: "top"
+        });
+
+        $("#menu").kendoMenu();
+        $(".textButton").kendoButton();
+
+        $("#grid").kendoGrid({
+            columns: [{
+                title: "Order ID",
+                field: "OrderID",
+                filterable: false,
+                encoded:true
+            }, {
+                title: "Freight",
+                field: "Freight",
+                encoded:true
+            }, {
+                title: "Order Date",
+                field: "OrderDate",
+                format: "{0:MM/dd/yyyy}",
+                encoded:true
+            }, {
+                title: "Ship Name",
+                field: "ShipName",
+                encoded:true
+            }, {
+                title: "Ship City",
+                field: "ShipCity",
+                encoded:true
+            }],
+            pageable: {
+                buttonCount: 10
+            },
+            sortable: true,
+            filterable:true,
+            messages: {
+                noRecords: "No records available."
+            },
+            dataSource:{
+                data: sampleData(),
+                pageSize: 20,
+                schema: {
+                    model: {
+                        fields: {
+                            OrderID: {
+                                type: "number"
+                            },
+                            CustomerID: {
+                                type: "string"
+                            },
+                            ContactName: {
+                                type: "string"
+                            },
+                            Freight: {
+                                type: "number",
+                                defaultValue: null
+                            },
+                            ShipAddress: {
+                                type: "string"
+                            },
+                            OrderDate: {
+                                type: "date",
+                                defaultValue: null
+                            },
+                            ShippedDate: {
+                                type: "date",
+                                defaultValue: null
+                            },
+                            ShipCountry: {
+                                type: "string"
+                            },
+                            ShipCity: {
+                                type: "string"
+                            },
+                            ShipName: {
+                                type: "string"
+                            },
+                            EmployeeID: {
+                                type: "number",
+                                defaultValue: null
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+	   default-lazy-init="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:database.properties</value>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="false"/>
+		<property name="order" value="1" />
+	</bean>
+
+	<context:component-scan base-package="com.dashen.hrms" />
+
+	<!--old-spring-viewreslover technlogy
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />		
+	</bean>
+	-->
+
+	<!--assets folder will be mapped as resource and css , js will be cached -->
+
+	<mvc:resources mapping="/resources/**" location="/resources/assets/"
+				   cache-period="10000"/>
+
+    <mvc:resources mapping="/decorators/**" location="/WEB-INF/decorators/"
+                   cache-period="31556926"/>
+	<mvc:annotation-driven />
+
+
+	<!-- **************************************************************** -->
+	<!--  THYMELEAF-SPECIFIC ARTIFACTS                                    -->
+	<!--  TemplateResolver <- TemplateEngine <- ViewResolver              -->
+	<!-- **************************************************************** -->
+
+	<bean id="viewResolver" class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+		<property name="templateEngine" ref="templateEngine" />
+		<property name="characterEncoding" value="UTF-8" />
+	</bean>
+
+	<!--Thymeleaf Template Engine (Spring4-specific version)-->
+	<bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+		<property name="templateResolvers">
+			<set>
+				<ref bean="templateResolver" />
+			</set>
+		</property>
+		<property name="additionalDialects">
+			<set>
+				<bean class="org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect"/>
+			</set>
+		</property>
+	</bean>
+
+	<!--Thymeleaf Template Resolver-->
+	<bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="templateMode" value="HTML5" />
+		<property name="cacheable" value="true"/>
+		<property name="suffix" value=".html"/>
+	</bean>
+
+
+	<bean id="multipartResolver"
+		  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		  p:defaultEncoding="utf-8" >
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<!-- <property name="maxUploadSize" value="40000000" /> -->
+	</bean>
+
+
+
+</beans>
+
